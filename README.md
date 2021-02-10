@@ -2,7 +2,7 @@
 The husband of Themis and a tool to upload to Themis
 
 # Info
-1. I cannot program
+1. I can't code
 2. Why do you need this program? No idea
 3. Does it work? No idea
 4. You are not a RUG student? Well
