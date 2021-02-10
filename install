@@ -1,0 +1,4 @@
+sudo apt-get install chromium-chromedriver
+pip install PyYAML
+pip install Selenium
+pip install stdiomask
