@@ -1,6 +1,8 @@
-username: s4272196
+username: 
 password:
 
 homeDir: https://themis.housing.rug.nl
-forwardDir: https://themis.housing.rug.nl/course/2020-2021/adinc-cs/tutorial-exercises/chapter1/Exercise%201.8
-files: /home/alex/study_aad/tutorials/tut1.8/copyList.c /home/alex/study_aad/tutorials/tut1.8/copyListIt.c
+# Go once to the link and copy it, then paste in here
+forwardDir: 
+# files absolute path, seperated with spaces
+files: 
