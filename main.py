@@ -15,7 +15,7 @@ if uname is None:
 
 pwd = yaml_data['password']
 if pwd is None:
-    pwd = getpass(prompt='Pasword: ')
+    pwd = getpass(prompt='Password: ')
 
 homedir = yaml_data['homeDir']
 if homedir is None:
@@ -57,9 +57,9 @@ command = input("Command (push+submit, push, submit, exit, rego): ")
 
 while command != "exit":
 
-    if command == "push+submit":
+    if command == "push+submit" or command == "sb":
         # First rego to page
-        driver.get("https://themis.housing.rug.nl/course/2020-2021/adinc-cs/tutorial-exercises/chapter1/Exercise%201.8")
+        driver.get(forwardDir)
 
         # Commit files
         for file in files:
@@ -70,7 +70,7 @@ while command != "exit":
         driver.find_element_by_id("btnUpload").click()
     elif command == "rego":
         # First rego to page
-        driver.get("https://themis.housing.rug.nl/course/2020-2021/adinc-cs/tutorial-exercises/chapter1/Exercise%201.8")
+        driver.get(forwardDir)
     elif command == "push":
         # Commit files
         for file in files:
