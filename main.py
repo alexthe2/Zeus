@@ -77,6 +77,10 @@ while command != "exit":
             element = driver.find_element_by_id("upload-0")
             element.send_keys(file)
 
+    elif command == "reload":
+        forwardDir = yaml_data['forwardDir']
+        files = yaml_data['files']
+
     elif command == "submit":
         # And push ;)
         driver.find_element_by_id("btnUpload").click()
@@ -85,7 +89,7 @@ while command != "exit":
         print("Command unknown")
 
     # wait for command
-    command = input("Command (push+submit, push, submit, exit, rego): ")
+    command = input("Command (push+submit, push, submit, exit, rego, reload): ")
 
 
 driver.close()
