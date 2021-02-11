@@ -53,7 +53,7 @@ if files is None:
 files = str.split(files, " ")
 
 # wait for command
-command = input("Command (push+submit, push, submit, exit, rego): ")
+command = input("Command (help, push+submit, push, submit, exit, rego, save): ")
 
 while command != "exit":
 
@@ -78,18 +78,31 @@ while command != "exit":
             element.send_keys(file)
 
     elif command == "reload":
-        forwardDir = yaml_data['forwardDir']
+        with open("data.yaml", 'r') as stream:
+            yaml_data = load(stream, Loader=FullLoader)
         files = yaml_data['files']
 
     elif command == "submit":
         # And push ;)
         driver.find_element_by_id("btnUpload").click()
 
+    elif command == "save":
+        forwardDir = driver.current_url
+
+    elif command == "help":
+        print("push+submit / ps => uploads the files which were specified and then submits them")
+        print("push => just uploads the files without submitting")
+        print("submit => submits the currently uploaded files")
+        print("rego => goes to the currently selected page")
+        print("reload => reloads the files from the data.yaml")
+        print("save => saves the current link as a new hyperlink")
+        print("exit => leaves")
+
     else:
         print("Command unknown")
 
     # wait for command
-    command = input("Command (push+submit, push, submit, exit, rego, reload): ")
+    command = input("Command (push+submit, push, submit, exit, rego, reload, save): ")
 
 
 driver.close()
